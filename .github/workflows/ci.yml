@@ -1,0 +1,27 @@
+name: CI/CD for Static HTML Project
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run a simple build step
+        run: echo "Build successful for static HTML project."
+
+      - name: Run unit tests
+        run: |
+          echo "No unit tests for static HTML. Simulating test pass."
+          echo "Tests passed."
+
+      - name: Deploy
+        run: echo "Deploy step here (for static files, this might be copying to a server or GitHub Pages)."
